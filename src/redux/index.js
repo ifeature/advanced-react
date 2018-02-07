@@ -4,7 +4,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk';
 import createSagaMiddleware from 'redux-saga';
-import { saga } from '../ducks/people';
+import rootSaga from './saga';
 import reducer from './reducer';
 import history from '../history';
 
@@ -29,6 +29,6 @@ const enhancer = composeEnhancers(applyMiddleware(...middlewares));
 const store = createStore(reducer, enhancer);
 window.store = store;
 
-sagaMiddleware.run(saga);
+sagaMiddleware.run(rootSaga);
 
 export default store;

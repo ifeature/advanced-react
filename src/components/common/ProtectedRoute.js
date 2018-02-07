@@ -7,7 +7,7 @@ import { moduleName } from '../../ducks/auth';
 
 class ProtectedRoute extends Component {
     static propTypes = {
-
+        authorized: PropTypes.bool.isRequired,
     };
 
     renderProtected = (routeProps) => {

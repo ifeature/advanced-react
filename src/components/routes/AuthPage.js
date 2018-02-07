@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import SignInForm from '../auth/SignInForm';
 import SignUpForm from '../auth/SignUpForm';
 import Loader from '../common/Loader';
-import { signUp, moduleName } from '../../ducks/auth';
+import { signIn, signUp, moduleName } from '../../ducks/auth';
 
 class AuthPage extends Component {
     static propTypes = {
@@ -13,8 +13,8 @@ class AuthPage extends Component {
         signUp: PropTypes.func.isRequired,
     };
 
-    handleSignIn = (values) => {
-        console.log('--- ', values);
+    handleSignIn = ({ email, password }) => {
+        this.props.signIn(email, password);
     };
 
     handleSignUp = ({ email, password }) => {
@@ -38,4 +38,4 @@ class AuthPage extends Component {
 
 export default connect((state) => ({
     loading: state[moduleName].loading,
-}), { signUp })(AuthPage);
+}), { signIn, signUp })(AuthPage);
