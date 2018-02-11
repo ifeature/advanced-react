@@ -5,9 +5,10 @@ import { Route, Link } from 'react-router-dom';
 import AdminPage from './routes/AdminPage';
 import AuthPage from './routes/AuthPage';
 import EventsPage from './routes/EventsPage';
-import PersonPage from './routes/PersonPage';
+import PeoplePage from './routes/PeoplePage';
 import ProtectedRoute from './common/ProtectedRoute';
 import { moduleName, signOut } from '../ducks/auth';
+import CustomDragLayer from '../CustomDragLayer';
 
 class Root extends Component {
     static propTypes = {
@@ -24,9 +25,10 @@ class Root extends Component {
             <div>
                 {btn}
                 <ProtectedRoute path="/admin" component={AdminPage} />
-                <ProtectedRoute path="/people" component={PersonPage} />
+                <ProtectedRoute path="/people" component={PeoplePage} />
                 <ProtectedRoute path="/events" component={EventsPage} />
                 <Route path="/auth" component={AuthPage} />
+                <CustomDragLayer />
             </div>
         );
     }

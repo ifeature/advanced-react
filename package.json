@@ -8,6 +8,8 @@
     "history": "^4.7.2",
     "immutable": "^3.8.2",
     "react": "^16.2.0",
+    "react-dnd": "^2.5.4",
+    "react-dnd-html5-backend": "^2.5.4",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
@@ -23,6 +25,7 @@
   "devDependencies": {
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "jsdom": "^11.6.2",
     "prop-types": "^15.6.0",
     "redux-devtools-extension": "^2.13.2",
     "redux-logger": "^3.0.6"
